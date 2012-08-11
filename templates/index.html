@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block toollogo %}
+<a href="{{url_for('patscan')}}"><img src="{{url_for('static', filename='patscan_logo.svg')}}" width="100px"></a>
+{% endblock %}
+{% block title %}: {% endblock %}
+{% block body %}
+  <div class="tagline">
+      Snazzy Tagline
+  </div>
+
+  <div id="contents">
+    <div id="tabs">
+      <ul>
+        <li><a href="#welcome-tab">Home</a></li>
+        <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('ingredients') }}">Ingredients</a></li>
+        <li><a href="{{ url_for('shopping') }}">Shopping List</a></li>
+      </ul>
+      <div id="welcome-tab">
+        <p><strong>Welcome to FoodStuff.</strong></p>
+        <p>FoodStuff is a program to store recipes, plan dinners and organize shopping lists</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tabs').tabs();
+  });
+</script>
+{% endblock %}
